@@ -3,18 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datos</title>
+    <title>Datos de Los Simpson</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0047AB;
+            margin: 20px auto;
+            padding: 10px;
+            border: 2px solid #0047AB;
+            border-radius: 5px;
+            width: fit-content;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border: 2px solid #000; /* Bordes negros para la tabla */
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            border-right: 1px solid #ddd; /* Bordes negros para las celdas */
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #0047AB;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Elimina el borde derecho de la última celda en cada fila */
+        td:last-child, th:last-child {
+            border-right: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>Lista de integrantes</h1>
-    <ul>
-        {% for persona in personas %}
-            <li>
-                Nombre: {{ persona.nombre }}<br>
-                Apellido: {{persona.apellido}}<br>
-                Rol: {{persona.descripcion}}
-            </li>
-        {% endfor %}
-    </ul>
+    <h1>Lista de Integrantes de Los Simpson</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Rol</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for persona in personas %}
+            <tr>
+                <td>{{ persona.nombre }}</td>
+                <td>{{ persona.apellido }}</td>
+                <td>{{ persona.descripcion }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
 </html>
