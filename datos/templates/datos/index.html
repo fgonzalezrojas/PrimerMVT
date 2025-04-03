@@ -6,7 +6,15 @@
     <title>Datos</title>
 </head>
 <body>
-    <h1>Personas</h1>
-    <p>{{ mensaje }}</p>
+    <h1>Lista de integrantes</h1>
+    <ul>
+        {% for persona in personas %}
+            <li>
+                Nombre: {{ persona.nombre }}<br>
+                Apellido: {{persona.apellido}}<br>
+                Rol: {{persona.descripcion}}
+            </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
